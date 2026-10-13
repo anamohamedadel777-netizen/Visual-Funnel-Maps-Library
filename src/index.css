@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #05070B;
+    --bg-navy: #0B111A;
+    --bg-card: #101823;
+    --gold-primary: #F2C45C;
+    --gold-warm: #D99B25;
+    --text-cream: #F7F3E8;
+    --text-muted: #AAB2BF;
+    --accent-green: #19C878;
+    --accent-blue: #5DA9FF;
+    --border-gold: rgba(242, 196, 92, 0.16);
+  }
+
+  body {
+    font-family: 'Cairo', 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #05070B;
+    color: #F7F3E8;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+.a4-page-sheet {
+  isolation: isolate;
+  contain: layout;
+  box-sizing: border-box;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B111A;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(242, 196, 92, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(242, 196, 92, 0.45);
+}
+
+/* Print Specific Rules for True A4 PDF Export */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    background-color: #05070B !important;
+    color: #F7F3E8 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 210mm !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .a4-page-sheet {
+    page-break-after: always !important;
+    break-after: page !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: hidden !important;
+  }
+}

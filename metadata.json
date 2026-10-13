@@ -1,0 +1,6 @@
+{
+  "name": "مكتبة خرائط الـ Funnels | Visual Funnel Maps Library",
+  "description": "دليل واستراتيجيات خرائط الـ Funnels البصرية لتحديد رحلة العميل قبل البدء في تصميم الصفحات.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
